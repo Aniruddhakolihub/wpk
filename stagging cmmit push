@@ -1,0 +1,290 @@
+# Experiment: Implementation of Staging, Commit, and Push on GitHub
+
+## Aim
+
+To learn and implement the Git operations **Staging, Commit, and Push** using Git Bash and GitHub.
+
+---
+
+## Objective
+
+* Create a local Git repository.
+* Add files to the staging area.
+* Commit changes to the local repository.
+* Push changes to a GitHub repository.
+
+---
+
+## Prerequisites
+
+* Git installed on the system.
+* GitHub account.
+* Internet connection.
+* Git Bash.
+
+---
+
+## Theory
+
+### Staging
+
+Staging is the process of adding files to the Git staging area before committing them to the repository.
+
+### Commit
+
+A commit saves the staged changes to the local repository with a descriptive message.
+
+### Push
+
+Push uploads local repository changes to the remote GitHub repository.
+
+---
+
+# Step 1: Verify Git Installation
+
+Open Git Bash and execute:
+
+```bash
+git --version
+```
+
+Expected Output:
+
+```bash
+git version 2.x.x
+```
+
+---
+
+# Step 2: Configure Git
+
+Set username:
+
+```bash
+git config --global user.name "Aniruddha Koli"
+```
+
+Set email:
+
+```bash
+git config --global user.email "your_email@example.com"
+```
+
+Verify:
+
+```bash
+git config --list
+```
+
+---
+
+# Step 3: Create Project Directory
+
+```bash
+mkdir GitDemo
+cd GitDemo
+```
+
+Check current directory:
+
+```bash
+pwd
+```
+
+---
+
+# Step 4: Initialize Git Repository
+
+```bash
+git init
+```
+
+Expected Output:
+
+```bash
+Initialized empty Git repository
+```
+
+---
+
+# Step 5: Create a File
+
+```bash
+echo "Hello GitHub" > demo.txt
+```
+
+Verify:
+
+```bash
+cat demo.txt
+```
+
+---
+
+# Step 6: Check Repository Status
+
+```bash
+git status
+```
+
+Output shows:
+
+```bash
+Untracked files:
+demo.txt
+```
+
+---
+
+# Step 7: Stage the File
+
+Add a specific file:
+
+```bash
+git add demo.txt
+```
+
+Or add all files:
+
+```bash
+git add .
+```
+
+Verify:
+
+```bash
+git status
+```
+
+Output:
+
+```bash
+Changes to be committed
+```
+
+---
+
+# Step 8: Commit the Changes
+
+```bash
+git commit -m "Initial Commit"
+```
+
+Expected Output:
+
+```bash
+1 file changed
+create mode 100644 demo.txt
+```
+
+---
+
+# Step 9: Create GitHub Repository
+
+1. Login to [GitHub](https://github.com?utm_source=chatgpt.com)
+2. Click **New Repository**.
+3. Enter repository name:
+
+```text
+GitDemo
+```
+
+4. Click **Create Repository**.
+
+---
+
+# Step 10: Connect Local Repository to GitHub
+
+Replace `USERNAME` with your GitHub username.
+
+```bash
+git remote add origin https://github.com/USERNAME/GitDemo.git
+```
+
+Verify:
+
+```bash
+git remote -v
+```
+
+---
+
+# Step 11: Push Files to GitHub
+
+For first push:
+
+```bash
+git branch -M main
+```
+
+```bash
+git push -u origin main
+```
+
+Expected Output:
+
+```bash
+Enumerating objects...
+Writing objects...
+To https://github.com/USERNAME/GitDemo.git
+```
+
+---
+
+# Step 12: Verify on GitHub
+
+1. Open your GitHub repository.
+2. Refresh the page.
+3. The file `demo.txt` should be visible.
+
+---
+
+# Common Git Commands
+
+| Command                     | Description             |
+| --------------------------- | ----------------------- |
+| `git init`                  | Initialize repository   |
+| `git status`                | Check repository status |
+| `git add file`              | Stage specific file     |
+| `git add .`                 | Stage all files         |
+| `git commit -m "msg"`       | Commit changes          |
+| `git remote add origin URL` | Add remote repository   |
+| `git push origin main`      | Push code to GitHub     |
+| `git pull origin main`      | Download latest changes |
+| `git clone URL`             | Clone repository        |
+
+---
+
+## Workflow Diagram
+
+```text
+Create File
+     ↓
+git add
+     ↓
+Staging Area
+     ↓
+git commit
+     ↓
+Local Repository
+     ↓
+git push
+     ↓
+GitHub Repository
+```
+
+---
+
+## Output
+
+* Git repository initialized successfully.
+* File added to staging area.
+* Changes committed successfully.
+* Repository linked with GitHub.
+* Files pushed to GitHub successfully.
+
+---
+
+## Result
+
+Thus, the implementation of **Staging, Commit, and Push operations on GitHub using Git** was performed successfully. The local project was uploaded to the GitHub repository using Git commands.
