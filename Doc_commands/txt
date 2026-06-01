@@ -1,0 +1,25 @@
+docker -v
+docker images
+docker pull openjdk
+docker ps -a   //container
+docker run python
+
+vs code ==
+from ubuntu
+maintainer ankita
+run apt update
+cmd["echo","this is my 1st ubuntu image"]
+docker build -t myubuntuimage .
+
+
+container
+java ch code lihi
+dockerfile code = from openjdk:11
+workdir /usr/src/myapp
+copy . /usr/src/myapp
+run javac Test.java
+cmd["java","Test"]
+
+docker build -t myjavaimage .
+docker images
+docker run --name javaproject myjavaimage
