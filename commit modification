@@ -1,0 +1,353 @@
+# Experiment: Implementation of Commit, Modification on Branch, Forking, and GitHub Repository Link
+
+## Aim
+
+To learn and implement GitHub operations such as **Commit, Modification on Branch (Master/Main), Forking a Repository, and Using GitHub Repository Links**.
+
+---
+
+## Objective
+
+* Create and commit files in a Git repository.
+* Modify files on the Main/Master branch.
+* Fork an existing GitHub repository.
+* Access and use GitHub repository links.
+* Push changes to GitHub.
+
+---
+
+## Prerequisites
+
+* Git installed on the system.
+* GitHub account.
+* Git Bash.
+* Internet connection.
+
+---
+
+## Theory
+
+### Commit
+
+A commit saves changes permanently in the local Git repository with a descriptive message.
+
+### Branch (Master/Main)
+
+The main branch is the default branch where the primary codebase is maintained.
+
+### Forking
+
+Forking creates a personal copy of another user's repository in your GitHub account.
+
+### Repository Link
+
+A repository link is the URL used to access, clone, or share a GitHub repository.
+
+---
+
+# Step 1: Create a Local Repository
+
+Open Git Bash:
+
+```bash
+mkdir GitBranchDemo
+cd GitBranchDemo
+git init
+```
+
+---
+
+# Step 2: Create a File
+
+```bash
+echo "GitHub Practical" > demo.txt
+```
+
+Check file:
+
+```bash
+cat demo.txt
+```
+
+---
+
+# Step 3: Stage and Commit
+
+```bash
+git add .
+```
+
+```bash
+git commit -m "Initial Commit"
+```
+
+Verify:
+
+```bash
+git log
+```
+
+---
+
+# Step 4: Check Current Branch
+
+```bash
+git branch
+```
+
+Output:
+
+```bash
+* main
+```
+
+or
+
+```bash
+* master
+```
+
+---
+
+# Step 5: Modify File on Main/Master Branch
+
+Append new content:
+
+```bash
+echo "Modification on Main Branch" >> demo.txt
+```
+
+Check file:
+
+```bash
+cat demo.txt
+```
+
+---
+
+# Step 6: Commit Modified Changes
+
+Check status:
+
+```bash
+git status
+```
+
+Stage changes:
+
+```bash
+git add demo.txt
+```
+
+Commit:
+
+```bash
+git commit -m "Modified file on main branch"
+```
+
+View commit history:
+
+```bash
+git log --oneline
+```
+
+Expected Output:
+
+```bash
+a1b2c3 Modified file on main branch
+x4y5z6 Initial Commit
+```
+
+---
+
+# Step 7: Create GitHub Repository
+
+1. Login to [GitHub](https://github.com?utm_source=chatgpt.com)
+2. Click **New Repository**.
+3. Enter repository name:
+
+```text
+GitBranchDemo
+```
+
+4. Click **Create Repository**.
+
+---
+
+# Step 8: Connect Local Repository to GitHub
+
+Replace `USERNAME` with your GitHub username.
+
+```bash
+git remote add origin https://github.com/USERNAME/GitBranchDemo.git
+```
+
+Verify:
+
+```bash
+git remote -v
+```
+
+---
+
+# Step 9: Push Repository to GitHub
+
+```bash
+git branch -M main
+```
+
+```bash
+git push -u origin main
+```
+
+---
+
+# Step 10: Fork a Repository
+
+Example repository:
+
+[GitHub Explore Repositories](https://github.com/explore?utm_source=chatgpt.com)
+
+### Procedure
+
+1. Open the repository you want to fork.
+2. Click **Fork** at the top-right corner.
+3. Select your GitHub account.
+4. GitHub creates a copy of the repository in your account.
+
+Example:
+
+Original Repository:
+
+```text
+https://github.com/owner/project
+```
+
+Forked Repository:
+
+```text
+https://github.com/YOUR_USERNAME/project
+```
+
+---
+
+# Step 11: Clone Forked Repository
+
+Example:
+
+```bash
+git clone https://github.com/YOUR_USERNAME/project.git
+```
+
+Move into repository:
+
+```bash
+cd project
+```
+
+---
+
+# Step 12: Make Changes in Forked Repository
+
+```bash
+echo "Fork Modification" >> README.md
+```
+
+Stage:
+
+```bash
+git add .
+```
+
+Commit:
+
+```bash
+git commit -m "Updated README in forked repository"
+```
+
+Push:
+
+```bash
+git push origin main
+```
+
+---
+
+# Step 13: Obtain Repository Link
+
+Open your repository on GitHub.
+
+Click **Code**.
+
+Copy HTTPS URL:
+
+Example:
+
+```text
+https://github.com/Aniruddhakolihub/GitBranchDemo.git
+```
+
+This repository link can be used for:
+
+* Cloning
+* Sharing
+* CI/CD Integration
+* Jenkins Integration
+
+---
+
+# Common Git Commands
+
+| Command             | Description             |
+| ------------------- | ----------------------- |
+| git init            | Initialize repository   |
+| git add .           | Stage all files         |
+| git commit -m "msg" | Commit changes          |
+| git branch          | View branches           |
+| git remote -v       | View remote repository  |
+| git push            | Upload changes          |
+| git clone URL       | Clone repository        |
+| git log             | View commit history     |
+| git status          | Check repository status |
+
+---
+
+## Workflow Diagram
+
+```text
+Create File
+     ↓
+git add
+     ↓
+git commit
+     ↓
+Main/Master Branch
+     ↓
+GitHub Repository
+     ↓
+Fork Repository
+     ↓
+Clone Fork
+     ↓
+Modify & Commit
+     ↓
+Push Changes
+```
+
+---
+
+## Output
+
+* Repository created successfully.
+* File committed successfully.
+* Modifications performed on Main/Master branch.
+* Repository pushed to GitHub.
+* Fork operation completed successfully.
+* Repository link obtained and used.
+
+---
+
+## Result
+
+Thus, the implementation of **Commit, Modification on Main/Master Branch, Forking, and GitHub Repository Link operations** was performed successfully using Git and GitHub.
+
