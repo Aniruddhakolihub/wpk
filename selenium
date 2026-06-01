@@ -1,0 +1,216 @@
+# Experiment: Installation of Selenium Tool and Demonstration of Automated Testing Using Selenium
+
+## Aim
+
+To install Selenium and demonstrate automated web testing using Selenium WebDriver.
+
+---
+
+## Objective
+
+* Install Selenium WebDriver.
+* Configure Java and Selenium libraries.
+* Write a Selenium test script.
+* Automate browser actions.
+* Verify automated testing execution.
+
+---
+
+## Prerequisites
+
+* Java JDK 8 or above
+* Eclipse/IntelliJ IDEA
+* Google Chrome Browser
+* Selenium WebDriver
+* ChromeDriver (if required)
+
+---
+
+## Theory
+
+**Selenium** is an open-source automation testing tool used for testing web applications. It supports multiple programming languages such as Java, Python, C#, and JavaScript. Selenium WebDriver directly interacts with web browsers and automates user actions like clicking buttons, entering text, and navigating web pages.
+
+### Components of Selenium
+
+1. Selenium IDE
+2. Selenium WebDriver
+3. Selenium Grid
+
+---
+
+# Step 1: Install Java
+
+Verify Java installation:
+
+```bash
+java -version
+```
+
+Expected Output:
+
+```bash
+java version "17.0.x"
+```
+
+---
+
+# Step 2: Create Java Project
+
+1. Open Eclipse IDE.
+2. Click **File → New → Java Project**.
+3. Enter Project Name:
+
+```text
+SeleniumDemo
+```
+
+4. Click **Finish**.
+
+---
+
+# Step 3: Add Selenium Dependency
+
+If using Maven, add the following dependency in `pom.xml`:
+
+```xml
+<dependencies>
+    <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>4.33.0</version>
+    </dependency>
+</dependencies>
+```
+
+---
+
+# Step 4: Create Test Class
+
+Create a Java class:
+
+```text
+SeleniumTest.java
+```
+
+---
+
+# Step 5: Write Selenium Script
+
+```java
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SeleniumTest {
+    public static void main(String[] args) {
+
+        WebDriver driver = new ChromeDriver();
+
+        driver.get("https://www.google.com");
+
+        System.out.println("Page Title: " + driver.getTitle());
+
+        driver.quit();
+    }
+}
+```
+
+---
+
+# Step 6: Run the Program
+
+1. Right-click the Java file.
+2. Select **Run As → Java Application**.
+
+---
+
+# Step 7: Observe Execution
+
+The following actions will occur automatically:
+
+1. Chrome browser opens.
+2. Google homepage loads.
+3. Page title is displayed in the console.
+4. Browser closes automatically.
+
+Expected Console Output:
+
+```text
+Page Title: Google
+```
+
+---
+
+# Step 8: Automated Login Example
+
+Example script to enter text in a search box:
+
+```java
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SearchTest {
+    public static void main(String[] args) {
+
+        WebDriver driver = new ChromeDriver();
+
+        driver.get("https://www.google.com");
+
+        WebElement searchBox =
+                driver.findElement(By.name("q"));
+
+        searchBox.sendKeys("Selenium Testing");
+
+        searchBox.submit();
+
+        driver.quit();
+    }
+}
+```
+
+---
+
+# Step 9: Verify Results
+
+The browser should:
+
+* Open Google.
+* Enter "Selenium Testing".
+* Submit the search automatically.
+* Display search results.
+
+---
+
+## Advantages of Selenium
+
+* Open source and free.
+* Supports multiple browsers.
+* Supports multiple programming languages.
+* Easy integration with Jenkins and TestNG.
+* Suitable for automated regression testing.
+
+---
+
+## Applications
+
+* Web application testing.
+* Functional testing.
+* Regression testing.
+* Cross-browser testing.
+* Continuous Integration (CI/CD) testing.
+
+---
+
+## Output
+
+* Selenium WebDriver installed successfully.
+* Java project configured successfully.
+* Automated browser testing executed.
+* Test case passed successfully.
+
+---
+
+## Result
+
+Thus, Selenium WebDriver was installed and configured successfully, and automated web testing was performed by opening a browser, navigating to a website, and executing automated actions.
