@@ -1,0 +1,96 @@
+1. Create a Local Repository
+mkdir DevOpsLab
+cd DevOpsLab
+
+git init
+
+Output:
+
+Initialized empty Git repository
+2. Create a File
+echo "Hello DevOps" > file1.txt
+
+Check status:
+
+git status
+3. Add File to Staging Area
+git add file1.txt
+
+Check status again:
+
+git status
+4. Commit the File
+git commit -m "Initial Commit"
+
+Output:
+
+[master (root-commit)] Initial Commit
+5. Create GitHub Repository
+Login to GitHub.
+Click New Repository.
+Enter repository name (e.g., DevOpsLab).
+Click Create Repository.
+
+You can use the official GitHub website:
+
+GitHub
+
+6. Connect Local Repository with GitHub
+git remote add origin https://github.com/username/DevOpsLab.git
+
+Verify:
+
+git remote -v
+7. Push Code to GitHub
+git branch -M master
+
+git push -u origin master
+8. Modification on Master Branch
+
+Modify file:
+
+echo "Modified Content" >> file1.txt
+
+Check changes:
+
+git status
+
+Add modified file:
+
+git add file1.txt
+
+Commit changes:
+
+git commit -m "Modified file on master branch"
+
+Push changes:
+
+git push origin master
+9. Fork a Repository
+Steps:
+Open any public GitHub repository.
+Click Fork button at the top-right corner.
+GitHub creates a copy in your account.
+
+Example repository:
+
+GitHub Explore Repositories
+
+10. Clone Forked Repository
+git clone https://github.com/yourusername/repository-name.git
+
+Move into repository:
+
+cd repository-name
+11. Get GitHub Repository Link
+
+Open your repository on GitHub.
+
+Repository URL format:
+
+https://github.com/username/repository-name
+
+Example:
+
+https://github.com/ankitadhagate/DevOpsLab
+Viva Questions and Answers
