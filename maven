@@ -1,0 +1,329 @@
+Here's the complete process from **zero to running a Maven project**.
+
+# Step 1: Install Java
+
+Download and install JDK 17 (or newer):
+
+[Oracle JDK Downloads](https://www.oracle.com/java/technologies/downloads/?utm_source=chatgpt.com)
+
+Verify installation:
+
+```bash
+java -version
+javac -version
+```
+
+---
+
+# Step 2: Install Maven
+
+Download Maven:
+
+[Apache Maven Download](https://maven.apache.org/download.cgi?utm_source=chatgpt.com)
+
+Verify installation:
+
+```bash
+mvn -version
+```
+
+You should see output similar to:
+
+```text
+Apache Maven 3.x.x
+Java version: 17
+```
+
+---
+
+# Step 3: Install IntelliJ IDEA (Easiest Option)
+
+Download:
+
+[IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/?utm_source=chatgpt.com)
+
+Install and open it.
+
+---
+
+# Step 4: Create a Maven Project
+
+In IntelliJ:
+
+```text
+File
+  → New Project
+      → Maven
+          → Next
+```
+
+Enter:
+
+```text
+GroupId: com.example
+ArtifactId: demo
+```
+
+Click **Create**.
+
+IntelliJ creates:
+
+```text
+demo
+ ├─ pom.xml
+ ├─ src
+ │   ├─ main
+ │   │   └─ java
+ │   └─ test
+ │       └─ java
+```
+
+---
+
+# Step 5: Open pom.xml
+
+You will see a file named:
+
+```text
+pom.xml
+```
+
+Put this code inside:
+
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>demo</artifactId>
+    <version>1.0</version>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+    </properties>
+</project>
+```
+
+---
+
+# Step 6: Create Java Class
+
+Inside:
+
+```text
+src/main/java
+```
+
+Create:
+
+```java
+package com.example;
+
+public class App {
+    public static void main(String[] args) {
+        System.out.println("Hello Maven");
+    }
+}
+```
+
+---
+
+# Step 7: Open Maven Window
+
+In IntelliJ:
+
+```text
+View
+  → Tool Windows
+      → Maven
+```
+
+You will see:
+
+```text
+Lifecycle
+ ├─ clean
+ ├─ validate
+ ├─ compile
+ ├─ test
+ ├─ package
+ ├─ install
+ └─ deploy
+```
+
+This is the Maven lifecycle.
+
+---
+
+# Step 8: Run Compile Phase
+
+Double-click:
+
+```text
+compile
+```
+
+or run:
+
+```bash
+mvn compile
+```
+
+Result:
+
+```text
+Java code compiled
+```
+
+---
+
+# Step 9: Run Test Phase
+
+Double-click:
+
+```text
+test
+```
+
+or:
+
+```bash
+mvn test
+```
+
+Result:
+
+```text
+Tests executed
+```
+
+---
+
+# Step 10: Run Package Phase
+
+Double-click:
+
+```text
+package
+```
+
+or:
+
+```bash
+mvn package
+```
+
+Maven automatically runs:
+
+```text
+validate
+↓
+compile
+↓
+test
+↓
+package
+```
+
+A JAR file is created in:
+
+```text
+target/demo-1.0.jar
+```
+
+---
+
+# Step 11: Run Install Phase
+
+Double-click:
+
+```text
+install
+```
+
+or:
+
+```bash
+mvn install
+```
+
+Maven runs:
+
+```text
+validate
+↓
+compile
+↓
+test
+↓
+package
+↓
+install
+```
+
+The JAR is copied to:
+
+```text
+.m2/repository
+```
+
+(local Maven repository)
+
+---
+
+# Step 12: Clean Project
+
+Run:
+
+```bash
+mvn clean
+```
+
+or double-click:
+
+```text
+clean
+```
+
+This deletes:
+
+```text
+target/
+```
+
+---
+
+# Interview Answer (Short)
+
+**Maven lifecycle phases:**
+
+```text
+validate
+→ compile
+→ test
+→ package
+→ install
+→ deploy
+```
+
+**Commands:**
+
+```bash
+mvn clean
+mvn compile
+mvn test
+mvn package
+mvn install
+mvn deploy
+```
+
+**Tool used:**
+
+* Java JDK
+* Apache Maven
+* IntelliJ IDEA (recommended) or Visual Studio Code
+
+For learning Maven, the easiest path is:
+
+**Install JDK → Install Maven → Install IntelliJ → Create Maven Project → Edit `pom.xml` → Run Compile → Package → Install.**
