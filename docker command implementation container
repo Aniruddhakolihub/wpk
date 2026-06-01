@@ -1,0 +1,351 @@
+# Experiment: Implementation of Docker Commands & Containerization Using Docker
+
+## Aim
+
+To learn and implement basic Docker commands and perform containerization of an application using Docker.
+
+---
+
+# Objective
+
+* Install Docker.
+* Understand basic Docker commands.
+* Create and run Docker containers.
+* Build a Docker image.
+* Containerize a simple application.
+
+---
+
+# Prerequisites
+
+* Docker Desktop installed
+* Git Bash / Command Prompt
+* Internet Connection
+
+---
+
+# Step 1: Verify Docker Installation
+
+Open Git Bash or Command Prompt:
+
+```bash
+docker --version
+```
+
+Expected Output:
+
+```bash
+Docker version 28.x.x
+```
+
+---
+
+# Step 2: Check Docker Information
+
+```bash
+docker info
+```
+
+Displays Docker system information.
+
+---
+
+# Step 3: Check Running Containers
+
+```bash
+docker ps
+```
+
+Output:
+
+```bash
+CONTAINER ID   IMAGE   COMMAND   STATUS
+```
+
+---
+
+# Step 4: Check All Containers
+
+```bash
+docker ps -a
+```
+
+Displays running and stopped containers.
+
+---
+
+# Step 5: Download Docker Image
+
+Pull Ubuntu image:
+
+```bash
+docker pull ubuntu
+```
+
+Verify:
+
+```bash
+docker images
+```
+
+Output:
+
+```bash
+REPOSITORY   TAG      IMAGE ID
+ubuntu       latest   xxxxx
+```
+
+---
+
+# Step 6: Run Docker Container
+
+```bash
+docker run -it ubuntu
+```
+
+You will enter the Ubuntu container shell.
+
+Check Linux version:
+
+```bash
+uname -a
+```
+
+Exit container:
+
+```bash
+exit
+```
+
+---
+
+# Step 7: Start Existing Container
+
+```bash
+docker start <container_id>
+```
+
+Example:
+
+```bash
+docker start a1b2c3d4
+```
+
+---
+
+# Step 8: Stop Container
+
+```bash
+docker stop <container_id>
+```
+
+Example:
+
+```bash
+docker stop a1b2c3d4
+```
+
+---
+
+# Step 9: Remove Container
+
+```bash
+docker rm <container_id>
+```
+
+Example:
+
+```bash
+docker rm a1b2c3d4
+```
+
+---
+
+# Step 10: Remove Docker Image
+
+```bash
+docker rmi ubuntu
+```
+
+---
+
+# Step 11: Create a Simple Application
+
+Create a file named:
+
+```text
+index.html
+```
+
+Content:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Docker Demo</title>
+</head>
+<body>
+<h1>Hello Docker Container</h1>
+</body>
+</html>
+```
+
+---
+
+# Step 12: Create Dockerfile
+
+Create file:
+
+```text
+Dockerfile
+```
+
+Content:
+
+```dockerfile
+FROM nginx:latest
+
+COPY index.html /usr/share/nginx/html/index.html
+```
+
+---
+
+# Step 13: Build Docker Image
+
+Navigate to project folder:
+
+```bash
+cd DockerDemo
+```
+
+Build image:
+
+```bash
+docker build -t docker-demo .
+```
+
+Verify:
+
+```bash
+docker images
+```
+
+---
+
+# Step 14: Run Container from Image
+
+```bash
+docker run -d -p 8080:80 docker-demo
+```
+
+Where:
+
+* `-d` → Detached mode
+* `-p` → Port mapping
+
+Check container:
+
+```bash
+docker ps
+```
+
+---
+
+# Step 15: Access Application
+
+Open browser:
+
+```text
+http://localhost:8080
+```
+
+Output:
+
+```text
+Hello Docker Container
+```
+
+---
+
+# Step 16: View Container Logs
+
+```bash
+docker logs <container_id>
+```
+
+Example:
+
+```bash
+docker logs a1b2c3d4
+```
+
+---
+
+# Step 17: Execute Commands Inside Container
+
+```bash
+docker exec -it <container_id> bash
+```
+
+Example:
+
+```bash
+docker exec -it a1b2c3d4 bash
+```
+
+---
+
+# Common Docker Commands
+
+| Command            | Description          |
+| ------------------ | -------------------- |
+| docker --version   | Check Docker version |
+| docker images      | List images          |
+| docker ps          | Running containers   |
+| docker ps -a       | All containers       |
+| docker pull ubuntu | Download image       |
+| docker run         | Create container     |
+| docker stop        | Stop container       |
+| docker start       | Start container      |
+| docker rm          | Delete container     |
+| docker rmi         | Delete image         |
+| docker build       | Build image          |
+| docker logs        | View logs            |
+| docker exec        | Access container     |
+
+---
+
+# Architecture
+
+```text
+Application Files
+       |
+       v
+   Dockerfile
+       |
+       v
+ Docker Image
+       |
+       v
+ Docker Container
+       |
+       v
+ Application Running
+```
+
+---
+
+# Output
+
+* Docker installed successfully.
+* Docker commands executed successfully.
+* Docker image created.
+* Container launched successfully.
+* Application deployed inside Docker container.
+
+---
+
+# Result
+
+Thus, the implementation of Docker commands and containerization using Docker was performed successfully. A Docker image was created from the application, and the application was executed inside a Docker container.
