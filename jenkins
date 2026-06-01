@@ -1,0 +1,348 @@
+Agar external examiner ne **"Implementation of Continuous Integration / Continuous Deployment with Jenkins and Java & Cloning in GitHub"** experiment diya hai aur aapko kuch nahi aata, to ye **sabse simple practical method** follow karo.
+
+## Experiment ka Basic Flow
+
+```text
+Java Program
+    ↓
+GitHub Repository
+    ↓
+Git Clone
+    ↓
+Jenkins
+    ↓
+Build Java Program
+    ↓
+Run Program
+    ↓
+SUCCESS
+```
+
+---
+
+# Step 1: Install Required Software
+
+### 1. Install Java JDK
+
+Check:
+
+```cmd
+java -version
+javac -version
+```
+
+Agar version show ho raha hai to Java installed hai.
+
+---
+
+### 2. Install Git
+
+Check:
+
+```cmd
+git --version
+```
+
+---
+
+### 3. Install Jenkins
+
+Download from:
+
+[Jenkins Download Page](https://www.jenkins.io/download/?utm_source=chatgpt.com)
+
+Install normally.
+
+Browser me open karo:
+
+```text
+http://localhost:8080
+```
+
+---
+
+# Step 2: Create Simple Java Project
+
+Desktop par folder banao:
+
+```text
+JenkinsDemo
+```
+
+Uske andar file banao:
+
+```text
+HelloWorld.java
+```
+
+Code:
+
+```java
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello Jenkins CI/CD");
+    }
+}
+```
+
+---
+
+# Step 3: Test Java Program
+
+CMD open karo.
+
+Folder me jao:
+
+```cmd
+cd Desktop\JenkinsDemo
+```
+
+Compile:
+
+```cmd
+javac HelloWorld.java
+```
+
+Run:
+
+```cmd
+java HelloWorld
+```
+
+Output:
+
+```text
+Hello Jenkins CI/CD
+```
+
+Examiner ko bolo:
+
+> First I verified the Java application locally.
+
+---
+
+# Step 4: Create GitHub Repository
+
+Open:
+
+[GitHub](https://github.com?utm_source=chatgpt.com)
+
+1. Sign In
+2. New Repository
+3. Repository Name:
+
+```text
+JenkinsDemo
+```
+
+4. Create Repository
+
+---
+
+# Step 5: Push Code to GitHub
+
+Project folder me CMD:
+
+Initialize Git:
+
+```cmd
+git init
+```
+
+Add file:
+
+```cmd
+git add .
+```
+
+Commit:
+
+```cmd
+git commit -m "Initial Commit"
+```
+
+Connect Repository:
+
+```cmd
+git remote add origin https://github.com/USERNAME/JenkinsDemo.git
+```
+
+Push:
+
+```cmd
+git push -u origin master
+```
+
+Refresh GitHub.
+
+File upload dikh jayegi.
+
+---
+
+# Step 6: Cloning in GitHub
+
+Repository URL copy karo.
+
+Example:
+
+```text
+https://github.com/USERNAME/JenkinsDemo.git
+```
+
+New folder me clone karo:
+
+```cmd
+git clone https://github.com/USERNAME/JenkinsDemo.git
+```
+
+Output:
+
+```text
+Cloning into 'JenkinsDemo'
+```
+
+Examiner ko bolo:
+
+> Cloning creates a local copy of a remote repository.
+
+---
+
+# Step 7: Open Jenkins
+
+Browser:
+
+```text
+http://localhost:8080
+```
+
+Login.
+
+---
+
+# Step 8: Create Jenkins Job
+
+1. Dashboard
+2. New Item
+3. Name:
+
+```text
+JavaProject
+```
+
+4. Freestyle Project
+5. OK
+
+---
+
+# Step 9: Configure GitHub Repository
+
+Source Code Management → Git
+
+Paste:
+
+```text
+https://github.com/USERNAME/JenkinsDemo.git
+```
+
+---
+
+# Step 10: Build Step Add
+
+Build Section →
+
+Add Build Step →
+
+Windows:
+
+```cmd
+javac HelloWorld.java
+java HelloWorld
+```
+
+---
+
+# Step 11: Build Now
+
+Click:
+
+```text
+Build Now
+```
+
+Left side Build History me build start hoga.
+
+Green tick aaye to build successful.
+
+---
+
+# Step 12: Check Console Output
+
+Build Number → Console Output
+
+Output:
+
+```text
+Started by user
+
+Cloning repository
+
+Compiling Java Program
+
+Running Program
+
+Hello Jenkins CI/CD
+
+Finished: SUCCESS
+```
+
+---
+
+# 2-Minute Viva Answers
+
+### What is CI?
+
+Continuous Integration means automatically building and testing code whenever changes are made.
+
+### What is CD?
+
+Continuous Deployment means automatically deploying code after successful build.
+
+### What is Jenkins?
+
+Jenkins is an automation tool used for Build, Test and Deployment.
+
+### What is GitHub?
+
+GitHub stores source code repositories online.
+
+### What is Cloning?
+
+Copying a remote repository to a local machine.
+
+Command:
+
+```cmd
+git clone repository_url
+```
+
+### What is Commit?
+
+Saving changes in Git repository.
+
+### What is Build?
+
+Converting source code into executable form.
+
+### Default Jenkins Port?
+
+```text
+8080
+```
+
+---
+
+### Exam me sabse short explanation
+
+**"I created a Java program, uploaded it to GitHub, Jenkins cloned the repository, compiled the Java file using `javac`, executed it using `java`, and the build was successful. This demonstrates Continuous Integration using Jenkins."**
+
+Ye line examiner ko impress karne ke liye kaafi hoti hai.
