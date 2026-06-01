@@ -1,0 +1,294 @@
+# Experiment: Implementation of Continuous Integration / Continuous Deployment (CI/CD) with Jenkins, Java, and GitHub
+
+## Aim
+
+To implement Continuous Integration and Continuous Deployment using Jenkins, Java, and GitHub by cloning a GitHub repository and automating the build process.
+
+---
+
+## Objective
+
+* Install and configure Jenkins.
+* Clone a Java project from GitHub.
+* Integrate GitHub with Jenkins.
+* Automate the build process using Jenkins.
+* Verify successful CI/CD execution.
+
+---
+
+## Prerequisites
+
+* Java JDK 17 or above
+* Git
+* Jenkins
+* GitHub Account
+* Sample Java Project Repository
+
+---
+
+# Step 1: Install Java
+
+Open Git Bash or Command Prompt:
+
+```bash
+java -version
+```
+
+Expected Output:
+
+```bash
+java version "17.0.x"
+```
+
+---
+
+# Step 2: Install Git
+
+Verify Git installation:
+
+```bash
+git --version
+```
+
+Expected Output:
+
+```bash
+git version 2.x.x
+```
+
+---
+
+# Step 3: Install Jenkins
+
+1. Download Jenkins from:
+
+   [Jenkins Official Website](https://www.jenkins.io?utm_source=chatgpt.com)
+
+2. Install Jenkins.
+
+3. Open Jenkins Dashboard:
+
+   ```
+   http://localhost:8080
+   ```
+
+4. Unlock Jenkins using the administrator password.
+
+5. Install Suggested Plugins.
+
+---
+
+# Step 4: Create a Java Project
+
+Create a simple Java file:
+
+```java
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello from Jenkins CI/CD");
+    }
+}
+```
+
+Save as:
+
+```text
+HelloWorld.java
+```
+
+---
+
+# Step 5: Create GitHub Repository
+
+1. Login to [GitHub](https://github.com?utm_source=chatgpt.com)
+2. Create a new repository.
+3. Repository Name:
+
+```text
+jenkins-java-demo
+```
+
+---
+
+# Step 6: Clone Repository Using Git Bash
+
+```bash
+git clone https://github.com/USERNAME/jenkins-java-demo.git
+```
+
+Move into repository:
+
+```bash
+cd jenkins-java-demo
+```
+
+---
+
+# Step 7: Add Java File
+
+Copy `HelloWorld.java` into repository folder.
+
+Check files:
+
+```bash
+ls
+```
+
+---
+
+# Step 8: Commit and Push Code
+
+```bash
+git add .
+```
+
+```bash
+git commit -m "Initial Java Project"
+```
+
+```bash
+git push origin main
+```
+
+---
+
+# Step 9: Configure Jenkins Job
+
+1. Open Jenkins Dashboard.
+2. Click **New Item**.
+3. Enter:
+
+```text
+Java-CI-CD
+```
+
+4. Select **Freestyle Project**.
+5. Click **OK**.
+
+---
+
+# Step 10: Configure GitHub Repository
+
+Under Source Code Management:
+
+* Select Git.
+* Enter repository URL:
+
+```text
+https://github.com/USERNAME/jenkins-java-demo.git
+```
+
+Save configuration.
+
+---
+
+# Step 11: Configure Build Step
+
+Click:
+
+```text
+Build → Add Build Step → Execute Windows Batch Command
+```
+
+Add:
+
+```cmd
+javac HelloWorld.java
+java HelloWorld
+```
+
+For Linux:
+
+```bash
+javac HelloWorld.java
+java HelloWorld
+```
+
+---
+
+# Step 12: Build the Project
+
+Click:
+
+```text
+Build Now
+```
+
+---
+
+# Step 13: Check Console Output
+
+Click:
+
+```text
+Build History → Latest Build → Console Output
+```
+
+Expected Output:
+
+```text
+Started by user Admin
+
+Cloning repository...
+
+Compiling Java File...
+
+Hello from Jenkins CI/CD
+
+Finished: SUCCESS
+```
+
+---
+
+# Step 14: Enable Automatic Build Trigger
+
+Open Project Configuration.
+
+Under Build Triggers:
+
+✔ GitHub hook trigger for GITScm polling
+
+OR
+
+✔ Poll SCM
+
+```text
+* * * * *
+```
+
+This checks GitHub every minute for changes.
+
+---
+
+## Architecture
+
+```text
+Developer
+    |
+    v
+ GitHub Repository
+    |
+    v
+ Jenkins Server
+    |
+    v
+ Build (Java Compile)
+    |
+    v
+ Test / Deploy
+```
+
+---
+
+## Output
+
+* GitHub repository successfully cloned.
+* Java project integrated with Jenkins.
+* Automated build executed successfully.
+* CI/CD pipeline configured.
+
+---
+
+## Result
+
+Thus, Continuous Integration and Continuous Deployment (CI/CD) using Jenkins, Java, and GitHub cloning was implemented successfully, and the Java application was automatically built through Jenkins whenever code changes were pushed to GitHub.
