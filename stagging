@@ -1,0 +1,257 @@
+# Experiment: Implementation of Staging, Commit and Push on GitHub
+
+## Aim
+
+To perform **Staging, Commit, and Push operations** using Git and GitHub.
+
+## Software Required
+
+* Git
+* GitHub Account
+* Command Prompt / Git Bash
+
+---
+
+# Theory
+
+### 1. Staging
+
+Staging is the process of adding modified files to the staging area before committing them.
+
+Command:
+
+```bash
+git add filename
+```
+
+or
+
+```bash
+git add .
+```
+
+---
+
+### 2. Commit
+
+A commit saves the staged changes into the local Git repository.
+
+Command:
+
+```bash
+git commit -m "Commit message"
+```
+
+---
+
+### 3. Push
+
+Push uploads local commits from the local repository to the remote GitHub repository.
+
+Command:
+
+```bash
+git push origin master
+```
+
+---
+
+# Procedure
+
+## Step 1: Create a Project Folder
+
+```bash
+mkdir GitDemo
+cd GitDemo
+```
+
+---
+
+## Step 2: Initialize Git Repository
+
+```bash
+git init
+```
+
+Output:
+
+```bash
+Initialized empty Git repository
+```
+
+---
+
+## Step 3: Create a File
+
+```bash
+echo "Hello GitHub" > index.txt
+```
+
+Check repository status:
+
+```bash
+git status
+```
+
+---
+
+## Step 4: Stage the File
+
+```bash
+git add index.txt
+```
+
+Or stage all files:
+
+```bash
+git add .
+```
+
+Verify:
+
+```bash
+git status
+```
+
+Output:
+
+```bash
+Changes to be committed
+```
+
+---
+
+## Step 5: Commit the Changes
+
+```bash
+git commit -m "Initial Commit"
+```
+
+Output:
+
+```bash
+[master (root-commit)] Initial Commit
+```
+
+---
+
+## Step 6: Create Repository on GitHub
+
+1. Login to GitHub using:
+
+   [GitHub](https://github.com?utm_source=chatgpt.com)
+
+2. Click **New Repository**.
+
+3. Enter repository name.
+
+4. Click **Create Repository**.
+
+---
+
+## Step 7: Connect Local Repository with GitHub
+
+```bash
+git remote add origin https://github.com/username/GitDemo.git
+```
+
+Check remote:
+
+```bash
+git remote -v
+```
+
+---
+
+## Step 8: Push Code to GitHub
+
+```bash
+git branch -M master
+git push -u origin master
+```
+
+Output:
+
+```bash
+Enumerating objects
+Writing objects
+Total objects
+```
+
+---
+
+## Step 9: Verify on GitHub
+
+Refresh your GitHub repository page.
+
+You will see:
+
+* Uploaded files
+* Commit history
+* Repository contents
+
+---
+
+# Commands Summary
+
+```bash
+mkdir GitDemo
+cd GitDemo
+
+git init
+
+echo "Hello GitHub" > index.txt
+
+git add .
+
+git commit -m "Initial Commit"
+
+git remote add origin https://github.com/username/GitDemo.git
+
+git branch -M master
+
+git push -u origin master
+```
+
+---
+
+# Result
+
+The files were successfully **staged**, **committed**, and **pushed** from the local Git repository to the GitHub repository.
+
+---
+
+# Viva Questions
+
+### 1. What is Staging?
+
+Staging is the process of selecting files that will be included in the next commit.
+
+### 2. What is a Commit?
+
+A commit is a snapshot of the project saved in the local repository.
+
+### 3. What is Push?
+
+Push transfers commits from the local repository to the remote repository on GitHub.
+
+### 4. What is `git add` used for?
+
+It moves files to the staging area.
+
+### 5. What is `git commit -m`?
+
+It creates a commit with a message describing the changes.
+
+### 6. What is GitHub?
+
+[GitHub Official Website](https://github.com?utm_source=chatgpt.com) is a cloud-based platform for hosting Git repositories.
+
+### 7. What is a Remote Repository?
+
+A repository hosted on a server such as GitHub.
+
+### 8. Difference between Git and GitHub?
+
+* Git: Version control system.
+* GitHub: Hosting platform for Git repositories.
